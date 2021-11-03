@@ -1,0 +1,11 @@
+config:
+  - qualitygatedashboard: "qgdashboard.json"
+  
+qualitygatedashboard:
+  - name: "KQG;project={{ .Env.KEPTN_PROJECT }};service={{ .Env.KEPTN_SERVICE }};stage={{ .Env.KEPTN_STAGE }}"
+  - project: "{{ .Env.KEPTN_PROJECT }}"
+  - stage: "{{ .Env.KEPTN_STAGE }}"
+  - service: "{{ .Env.KEPTN_SERVICE }}"  
+  - owner: "${OWNER_EMAIL}"
+  - keptnbridge: "http://https://izp03563.cloudautomation.live.dynatrace.com/bridge/project/delivery-demo/bridge"
+  - owner: "jason.ostroski@dynatrace.com"
