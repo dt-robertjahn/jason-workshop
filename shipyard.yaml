@@ -1,0 +1,36 @@
+apiVersion: spec.keptn.sh/0.2.0
+kind: Shipyard
+metadata:
+  name: "two-stage-delivery"
+spec:
+  stages:
+  - name: staging
+    sequences:
+    - name: delivery
+      tasks:
+      - name: monaco
+      - name: deployment
+        properties:
+          deploymentstrategy: user_managed
+      - name: evaluation
+        triggeredAfter: "6m"
+        properties:
+          timeframe: "6m"
+  - name: production
+    sequences:
+    - name: delivery
+      triggeredOn:
+      - event: staging.delivery.finished
+      tasks:
+      - name: approval
+        properties:
+          pass: automatic
+          warning: manual
+      - name: monaco
+      - name: deployment
+        properties:
+          deploymentstrategy: user_managed
+      - name: evaluation
+        triggeredAfter: "6m"
+        properties:
+          timeframe: "6m"
