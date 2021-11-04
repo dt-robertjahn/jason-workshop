@@ -6,12 +6,6 @@ comparison:
   number_of_comparison_results: 1
   aggregate_function: avg
 objectives:
-- sli: proc_count
-  displayName: ""
-  pass: []
-  warning: []
-  weight: 1
-  key_sli: false
 - sli: svc_rt_p95
   displayName: ""
   pass:
@@ -27,15 +21,6 @@ objectives:
   - criteria:
     - <+10%
     - <550
-  warning: []
-  weight: 1
-  key_sli: false
-- sli: svc_rt_p50
-  displayName: ""
-  pass:
-  - criteria:
-    - <+10%
-    - <500
   warning: []
   weight: 1
   key_sli: false
@@ -73,50 +58,6 @@ objectives:
   warning: []
   weight: 1
   key_sli: false
-- sli: host_cpu
-  displayName: ""
-  pass:
-  - criteria:
-    - <20
-  warning:
-  - criteria:
-    - <50
-  weight: 1
-  key_sli: false
-- sli: host_mem
-  displayName: ""
-  pass:
-  - criteria:
-    - <20
-  warning:
-  - criteria:
-    - <50
-  weight: 1
-  key_sli: false
-- sli: host_disk_queue
-  displayName: ""
-  pass:
-  - criteria:
-    - <=0
-  warning:
-  - criteria:
-    - <1
-  weight: 1
-  key_sli: false
-- sli: svc2svc_calls
-  displayName: ""
-  pass: []
-  warning: []
-  weight: 1
-  key_sli: false
-- sli: problems
-  displayName: ""
-  pass:
-  - criteria:
-    - <=0
-  warning: []
-  weight: 1
-  key_sli: true
 total_score:
   pass: 90%
   warning: 70%
