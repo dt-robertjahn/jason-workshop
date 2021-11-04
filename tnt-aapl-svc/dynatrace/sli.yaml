@@ -1,0 +1,15 @@
+spec_version: 0.1.4
+indicators:
+  host_cpu: metricSelector=builtin:host.cpu.usage:merge("dt.entity.host"):avg:names&entitySelector=type(HOST),mzId(3750989387272200886)
+  host_disk_queue: metricSelector=builtin:host.disk.queueLength:merge("dt.entity.disk"):merge("dt.entity.host"):max:names&entitySelector=type(HOST),mzId(3750989387272200886)
+  host_mem: metricSelector=builtin:host.mem.usage:merge("dt.entity.host"):avg:names&entitySelector=type(HOST),mzId(3750989387272200886)
+  problems: PV2;problemSelector=status(open),managementZoneIds(3750989387272200886)
+  proc_count: metricSelector=builtin:tech.generic.processCount:merge("dt.entity.process_group_instance"):avg:names&entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(3750989387272200886)
+  process_cpu: metricSelector=builtin:tech.generic.cpu.usage:merge("dt.entity.process_group_instance"):avg:names&entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(3750989387272200886)
+  process_memory: MV2;Byte;metricSelector=builtin:tech.generic.mem.workingSetSize:merge("dt.entity.process_group_instance"):avg:names&entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(3750989387272200886)
+  svc_fr: metricSelector=builtin:service.errors.server.rate:merge("dt.entity.service"):avg:names&entitySelector=type(SERVICE),mzId(3750989387272200886)
+  svc_rt_p50: MV2;MicroSecond;metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(50.000000):names&entitySelector=type(SERVICE),mzId(3750989387272200886)
+  svc_rt_p90: MV2;MicroSecond;metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(90.000000):names&entitySelector=type(SERVICE),mzId(3750989387272200886)
+  svc_rt_p95: MV2;MicroSecond;metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(95.000000):names&entitySelector=type(SERVICE),mzId(3750989387272200886)
+  svc_tp_min: metricSelector=builtin:service.requestCount.total:merge("dt.entity.service"):value:names&entitySelector=type(SERVICE),mzId(3750989387272200886)
+  svc2svc_calls: metricSelector=builtin:service.nonDbChildCallCount:merge("dt.entity.service"):value:names&entitySelector=type(SERVICE),mzId(3750989387272200886)
